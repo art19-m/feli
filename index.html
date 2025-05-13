@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Día de la Madre</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #ffd6e8, #ffe6f2);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      color: #d63384;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #8a2c68;
+    }
+
+    .heart-img {
+      max-width: 300px;
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 20px; /* Añadido para separar la imagen del botón */
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    button {
+      background-color: #ff66b3;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      display: block; /* Añadido para que el botón ocupe su propia línea */
+      margin: 0 auto; /* Centra el botón */
+    }
+
+    button:hover {
+      background-color: #ff3385;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message-container {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .special-message {
+      font-size: 1.3em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div id="initial-content">
+    <h1>💖 ¡Feliz Día de la Madre! 💖</h1>
+    <p> 👑🌷</p>
+    <img class="heart-img" src="https://i.pinimg.com/originals/96/0e/0e/960e0e640d682147c3385bf7cb6677b7.gif" alt="Corazón animado">
+    <!-- Botón movido aquí, justo después de la imagen -->
+    <button id="show-message-btn">Presiona para un mensaje especial</button>
+  </div>
+
+  <div id="message-content" class="hidden message-container">
+    <h1>💝 Para la mejor mamá del mundo 💝</h1>
+    <img class="heart-img" src="bba.jpg" alt="Madre e hijo">
+    <div class="special-message">
+      <p> Madre, en tu abrazo entendí que el amor verdadero no tiene voz, pero lo dice todo.</p>
+      <p>💐 Que este día esté lleno de alegría, amor y todas las bendiciones que mereces. ¡Te amo con todo mi corazón! 💐</p>
+    </div>
+    <button id="back-btn">Volver</button>
+  </div>
+
+  <script>
+    const showMessageBtn = document.getElementById('show-message-btn');
+    const backBtn = document.getElementById('back-btn');
+    const initialContent = document.getElementById('initial-content');
+    const messageContent = document.getElementById('message-content');
+
+    showMessageBtn.addEventListener('click', function() {
+      initialContent.classList.add('hidden');
+      messageContent.classList.remove('hidden');
+    });
+
+    backBtn.addEventListener('click', function() {
+      messageContent.classList.add('hidden');
+      initialContent.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
